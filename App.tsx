@@ -5,25 +5,35 @@ import { StyleSheet, Text, View } from "react-native";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <LinearGradient
-        colors={["rgba(0,0,0,0.9)", "transparent"]}
-        // style={styles.background}
-      />
+    // <View style={styles.container}>
+    <LinearGradient
+      colors={["#33ccff", "#00ccff",  "#ff9933" ]}
+      start={{ x: -1, y: -1 }}
+      end={{ x: 1, y: 1 }}
+      style={styles.background}
+    >
       <Text style={styles.text}>Find Your Inspiration</Text>
       <StatusBar style="auto" />
-    </View>
+    </LinearGradient>
+    // </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
   },
   text: {
-    color: "magenta",
+    color: "#fff0e6",
+  },
+
+  background: {
+    width: "100%",
+    height: "100%",
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
