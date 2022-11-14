@@ -4,7 +4,7 @@ import { styles } from "../styles";
 
 export default function QuoteCard({ quote }: QuoteProp) {
   return (
-    <View style={styles.quoteContainer}>
+    <View>
       <Text style={styles.quoteText}>{quote?.body}</Text>
       <Text style={styles.quoteText}>-{quote?.author}</Text>
     </View>

@@ -29,13 +29,12 @@ export const styles = StyleSheet.create({
   quoteButtonText: {
     fontSize: 20,
   },
-
-  quoteContainer: {
-    justifyContent: "center",
-    alignItems: "center",
-  },
   quoteText: {
+    marginLeft: 50,
+    marginRight: 50,
+    marginBottom: 10,
     color: "white",
+    textAlign: "center",
   },
   sun: {
     marginTop: 50,
