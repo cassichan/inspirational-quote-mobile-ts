@@ -1,11 +1,34 @@
 import * as React from "react";
+import { useState, useEffect } from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import { StatusBar } from "expo-status-bar";
-import {Text, View } from "react-native";
-import Quotes from "./components/Quotes";
-import{styles} from "./styles.js"
+import { Text, View } from "react-native";
+import { Quote } from "./models/quote";
+import QuoteCard from "./components/QuoteCard";
+import { styles } from "./styles.js";
+import GetQuote from "./components/GetQuote";
 
 export default function App() {
+  const [quotes, setQuotes] = useState<Quote[]>([]) || undefined;
+  const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
+
+  const getNewQuote: Function = () => {
+    if (currentQuoteIndex < quotes.length - 1) {
+      setCurrentQuoteIndex(currentQuoteIndex + 1);
+    } else {
+      setCurrentQuoteIndex(0);
+    }
+  };
+
+  useEffect(() => {
+    fetch("https://inspirational-quotes-cc.web.app/all-quotes")
+      .then((res) => res.json())
+      .then((data: Quote[]) => {
+        setQuotes(data);
+      })
+      .catch(alert);
+  }, []);
+
   return (
     // <View style={styles.container}>
     <LinearGradient
@@ -15,7 +38,13 @@ export default function App() {
       style={styles.background}
     >
       <Text style={styles.text}>Find Your Inspiration</Text>
-      <Quotes />
+      <GetQuote getNewQuote={getNewQuote} />
+      {quotes && quotes.length ? (
+        <>
+          <QuoteCard quote={quotes[currentQuoteIndex]} />
+        </>
+      ) : null}
+
       <Text style={styles.sun}>☀️</Text>
       <StatusBar style="auto" />
     </LinearGradient>
