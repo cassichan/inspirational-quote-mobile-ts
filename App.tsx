@@ -2,7 +2,7 @@ import * as React from "react";
 import { useState, useEffect } from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import { StatusBar } from "expo-status-bar";
-import { Text, View } from "react-native";
+import { Text } from "react-native";
 import { Quote } from "./models/quote";
 import QuoteCard from "./components/QuoteCard";
 import { styles } from "./styles.js";
@@ -17,6 +17,16 @@ export default function App() {
       setCurrentQuoteIndex(currentQuoteIndex + 1);
     } else {
       setCurrentQuoteIndex(0);
+    }
+  };
+
+  const getRandomQuote: Function = () => {
+    let randomIndex = Math.floor(Math.random() * (quotes.length - 1));
+    if (currentQuoteIndex !== randomIndex) {
+      setCurrentQuoteIndex(randomIndex);
+      console.log(`index: ${currentQuoteIndex}`);
+    } else {
+      setCurrentQuoteIndex(Math.floor(Math.random() * (quotes.length - 1)));
     }
   };
 
@@ -38,7 +48,8 @@ export default function App() {
       style={styles.background}
     >
       <Text style={styles.text}>Find Your Inspiration</Text>
-      <GetQuote getNewQuote={getNewQuote} />
+      {/* <GetQuote getNewQuote={getNewQuote} /> */}
+      <GetQuote getRandomQuote={getRandomQuote} />
       {quotes && quotes.length ? (
         <>
           <QuoteCard quote={quotes[currentQuoteIndex]} />
