@@ -39,12 +39,12 @@ export default function QuotePage() {
 
   return (
     <LinearGradient
-      colors={["#33ccff", "#00ccff", "#ff9933"]}
+    colors={["#fff", "#f5bb9a", "#5accbd"]}
       start={{ x: -1, y: -1 }}
       end={{ x: 1, y: 1 }}
       style={styles.background}
     >
-      <Text style={styles.text}>Find Your Inspiration</Text>
+      {/* <Text style={styles.text}>Shuffle</Text> */}
       {/* <GetQuote getNewQuote={getNewQuote} /> */}
       <GetQuote getRandomQuote={getRandomQuote} />
       {quotes && quotes.length ? (

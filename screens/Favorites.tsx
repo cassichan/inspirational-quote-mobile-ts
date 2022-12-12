@@ -1,7 +1,7 @@
 import { Text } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { styles } from "../styles.js";
-export default function Login() {
+export default function Favorites() {
   return (
     <LinearGradient
       colors={["#fff", "#f5bb9a", "#5accbd"]}
@@ -9,7 +9,7 @@ export default function Login() {
       end={{ x: 1, y: 1 }}
       style={styles.background}
     >
-      <Text>Login</Text>
+      <Text>Favorite list</Text>
     </LinearGradient>
   );
 }

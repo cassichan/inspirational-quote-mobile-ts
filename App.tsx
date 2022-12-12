@@ -5,6 +5,7 @@ import { Icon } from "react-native-elements";
 import Landing from "./components/Landing";
 import QuotePage from "./screens/QuotePage";
 import Login from "./screens/Login";
+import Favorites from "./screens/Favorites";
 
 const Tab = createBottomTabNavigator();
 
@@ -14,7 +15,7 @@ export default function App() {
         <Tab.Navigator
           screenOptions={() => {
             return {
-              tabBarActiveTintColor: "magenta",
+              tabBarActiveTintColor: "orange",
               tabBarInactiveTintColor: "gray",
             };
           }}
@@ -35,7 +36,7 @@ export default function App() {
           />
           <Tab.Screen
             name="Favorites"
-            component={QuotePage}
+            component={Favorites}
             options={() => {
               return { tabBarIcon: () => <Icon name="star" tvParallaxProperties={undefined} /> };
             }}
