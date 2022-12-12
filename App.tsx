@@ -1,5 +1,4 @@
 import * as React from "react";
-// import { StatusBar } from "expo-status-bar";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import { Icon } from "react-native-elements";
@@ -24,21 +23,21 @@ export default function App() {
             name="Home"
             component={Landing}
             options={() => {
-              return { tabBarIcon: () => <Icon name="house" size="20" /> };
+              return { tabBarIcon: () => <Icon name="house" tvParallaxProperties={undefined} /> };
             }}
           />
           <Tab.Screen
-            name="Quotes"
+            name="Browse"
             component={QuotePage}
             options={() => {
-              return { tabBarIcon: () => <Icon name="book" size="20" /> };
+              return { tabBarIcon: () => <Icon name="book" tvParallaxProperties={undefined} /> };
             }}
           />
           <Tab.Screen
             name="Favorites"
             component={QuotePage}
             options={() => {
-              return { tabBarIcon: () => <Icon name="star" size="20" /> };
+              return { tabBarIcon: () => <Icon name="star" tvParallaxProperties={undefined} /> };
             }}
           />
           <Tab.Screen
@@ -47,7 +46,7 @@ export default function App() {
             options={() => {
               return {
                 tabBarIcon: () => (
-                  <Icon name="sc-telegram" type="evilicon" size="20" />
+                  <Icon name="sc-telegram" type="evilicon" tvParallaxProperties={undefined} />
                 ),
               };
             }}

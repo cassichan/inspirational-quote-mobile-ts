@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Text } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-// import { StatusBar } from "expo-status-bar";
 import { Quote } from "../models/quote";
 import QuoteCard from "../components/QuoteCard";
 import { styles } from "../styles.js";
@@ -55,7 +54,6 @@ export default function QuotePage() {
       ) : null}
 
       <Text style={styles.sun}>☀️</Text>
-      {/* <StatusBar style="auto" /> */}
     </LinearGradient>
   );
 }
