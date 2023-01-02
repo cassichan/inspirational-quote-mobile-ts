@@ -5,14 +5,14 @@ import { Quote } from "../models/quote";
 import QuoteCard from "../components/QuoteCard";
 import { styles } from "../styles.js";
 // import GetQuote from "../components/GetQuote";
-import { useSwipe } from "../hooks/useswipe";
+import { useSwipe } from "../hooks/useSwipe";
 
 export default function QuotePage() {
   const [quotes, setQuotes] = useState<Quote[]>([]) || undefined;
   const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
   const { onTouchStart, onTouchEnd } = useSwipe(
-    onSwipeDown,
-    // onSwipeUp,
+    // onSwipeDown,
+    onSwipeUp,
     6
   );
 
@@ -34,13 +34,13 @@ export default function QuotePage() {
     }
   };
 
-  // function onSwipeUp() {
-  //   getRandomQuote();
-  // }
-
-  function onSwipeDown() {
+  function onSwipeUp() {
     getRandomQuote();
   }
+
+  // function onSwipeDown() {
+  //   getRandomQuote();
+  // }
 
   useEffect(() => {
     fetch("https://inspirational-quotes-cc.web.app/all-quotes")

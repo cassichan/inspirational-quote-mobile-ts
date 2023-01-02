@@ -2,8 +2,8 @@ import { Dimensions } from "react-native";
 const windowHeight = Dimensions.get("window").height;
 
 export function useSwipe(
-  // onSwipeUp?: any,
-  onSwipeDown?: any,
+  onSwipeUp?: any,
+  // onSwipeDown?: any,
   rangeOffset = 4
 ) {
   let firstTouch = 0;
@@ -16,10 +16,10 @@ export function useSwipe(
     const positionY = e.nativeEvent.pageY;
     const range = windowHeight / rangeOffset;
     if (firstTouch - positionY > range) {
-      onSwipeDown && onSwipeDown();
+      onSwipeUp && onSwipeUp();
     }
     //  else if (positionY - firstTouch > range) {
-    //     onSwipeUp && onSwipeUp();
+    //     onSwipeDown && onSwipeDown();
     //   }
   }
 
