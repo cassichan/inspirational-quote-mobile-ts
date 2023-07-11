@@ -12,29 +12,34 @@ const Tab = createBottomTabNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-        <Tab.Navigator
-          screenOptions={() => {
-            return {
-              tabBarActiveTintColor: "orange",
-              tabBarInactiveTintColor: "gray",
-            };
-          }}
-        >
-          {/* <Tab.Screen
+      <Tab.Navigator
+        screenOptions={() => {
+          return {
+            tabBarActiveTintColor: "orange",
+            tabBarInactiveTintColor: "gray",
+          };
+        }}
+      >
+        {/* <Tab.Screen
             name="Home"
             component={Landing}
             options={() => {
               return { tabBarIcon: () => <Icon name="house" tvParallaxProperties={undefined} /> };
             }}
           /> */}
-          <Tab.Screen
-            name="Swipe up!"
-            component={QuotePage}
-            options={() => {
-              return { tabBarIcon: () => <Icon name="book" tvParallaxProperties={undefined} /> };
-            }}
-          />
-          {/* <Tab.Screen
+        <Tab.Screen
+          name="Swipe up 🥰"
+          component={QuotePage}
+          options={() => {
+            return {
+              tabBarIcon: () => (
+                <Icon name="book" tvParallaxProperties={undefined} />
+              ),
+              tabBarLabel: "Glimmers"
+            };
+          }}
+        />
+        {/* <Tab.Screen
             name="Favorites"
             component={Favorites}
             options={() => {
@@ -52,7 +57,7 @@ export default function App() {
               };
             }}
           /> */}
-        </Tab.Navigator>
+      </Tab.Navigator>
     </NavigationContainer>
   );
 }
