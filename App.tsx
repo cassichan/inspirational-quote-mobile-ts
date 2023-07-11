@@ -4,7 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { Icon } from "react-native-elements";
 // import Landing from "./components/Landing";
 import QuotePage from "./screens/QuotePage";
-// import Login from "./screens/Login";
+import Login from "./screens/Login";
 // import Favorites from "./screens/Favorites";
 
 const Tab = createBottomTabNavigator();
@@ -40,7 +40,7 @@ export default function App() {
             options={() => {
               return { tabBarIcon: () => <Icon name="star" tvParallaxProperties={undefined} /> };
             }}
-          />
+          /> */}
           <Tab.Screen
             name="Login"
             component={Login}
@@ -51,7 +51,7 @@ export default function App() {
                 ),
               };
             }}
-          /> */}
+          />
         </Tab.Navigator>
     </NavigationContainer>
   );
