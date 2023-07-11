@@ -1,34 +1,21 @@
 import { useState, useEffect } from "react";
-import { Text, ScrollView } from "react-native";
+import { ScrollView, Text } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { Quote } from "../models/quote";
 import QuoteCard from "../components/QuoteCard";
-import { styles } from "../styles.js";
 // import GetQuote from "../components/GetQuote";
 import { useSwipe } from "../hooks/useSwipe";
+import { styles } from "../styles.js";
 
 export default function QuotePage() {
   const [quotes, setQuotes] = useState<Quote[]>([]) || undefined;
   const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
-  const { onTouchStart, onTouchEnd } = useSwipe(
-    // onSwipeDown,
-    onSwipeUp,
-    6
-  );
-
-  const getNewQuote: Function = () => {
-    if (currentQuoteIndex < quotes.length - 1) {
-      setCurrentQuoteIndex(currentQuoteIndex + 1);
-    } else {
-      setCurrentQuoteIndex(0);
-    }
-  };
+  const { onTouchStart, onTouchEnd } = useSwipe(onSwipeUp, 6);
 
   const getRandomQuote: Function = () => {
     let randomIndex = Math.floor(Math.random() * (quotes.length - 1));
     if (currentQuoteIndex !== randomIndex) {
       setCurrentQuoteIndex(randomIndex);
-      console.log(`index: ${currentQuoteIndex}`);
     } else {
       setCurrentQuoteIndex(Math.floor(Math.random() * (quotes.length - 1)));
     }
@@ -37,10 +24,6 @@ export default function QuotePage() {
   function onSwipeUp() {
     getRandomQuote();
   }
-
-  // function onSwipeDown() {
-  //   getRandomQuote();
-  // }
 
   useEffect(() => {
     fetch("https://inspirational-quotes-cc.web.app/all-quotes")
@@ -62,6 +45,9 @@ export default function QuotePage() {
         {/* <GetQuote getRandomQuote={getRandomQuote} /> */}
         {quotes && quotes.length ? (
           <>
+            {/* <Text style={styles.quoteInstructionsText}>
+              Swipe up 🥰
+            </Text> */}
             <QuoteCard quote={quotes[currentQuoteIndex]} />
           </>
         ) : null}

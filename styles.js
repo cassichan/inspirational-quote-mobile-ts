@@ -11,17 +11,6 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  // quoteButton: {
-  //   backgroundColor: "#ffcccc",
-  //   borderRadius: 5,
-  //   marginTop: 30,
-  //   marginBottom: 80,
-  //   padding: 5,
-  // },
-
-  // quoteButtonText: {
-  //   fontSize: 20,
-  // },
   swipeUpIcon: {
     textAlign: "center",
     marginTop: 200,
@@ -29,7 +18,6 @@ export const styles = StyleSheet.create({
   quoteBodyText: {
     marginLeft: 50,
     marginRight: 50,
-    marginTop: 20,
     marginBottom: 10,
     color: "white",
     fontSize: 30,
@@ -41,4 +29,10 @@ export const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: "right",
   },
+  quoteInstructionsText: {
+    marginTop: 20,
+    color: "white",
+    fontSize: 15,
+    textAlign: "center",
+  }
 });
