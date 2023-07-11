@@ -12,7 +12,8 @@
       "backgroundColor": "#ffffff"
     },
     "updates": {
-      "fallbackToCacheTimeout": 0
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/5d1506ff-69de-49b2-807f-9f6c1cd23475"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -25,7 +26,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "cassichan.glimmers"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -34,6 +36,9 @@
       "eas": {
         "projectId": "5d1506ff-69de-49b2-807f-9f6c1cd23475"
       }
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
     }
   }
 }
