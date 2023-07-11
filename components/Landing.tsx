@@ -1,4 +1,4 @@
-import { Text, View } from "react-native";
+import { Text } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { styles } from "../styles.js";
 export default function Landing() {
@@ -9,7 +9,8 @@ export default function Landing() {
       end={{ x: 1, y: 1 }}
       style={styles.background}
     >
-      <Text>Welcome.</Text>
+      <Text>Browse our quotes!</Text>
+      <Text>Swipe up to shuffle 🥰</Text>
     </LinearGradient>
   );
 }

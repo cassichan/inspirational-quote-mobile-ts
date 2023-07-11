@@ -9,7 +9,7 @@ export default function Login() {
       end={{ x: 1, y: 1 }}
       style={styles.background}
     >
-      <Text>Login</Text>
+      <Text>Login coming soon</Text>
     </LinearGradient>
   );
 }

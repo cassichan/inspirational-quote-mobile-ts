@@ -9,7 +9,7 @@ export default function Favorites() {
       end={{ x: 1, y: 1 }}
       style={styles.background}
     >
-      <Text>Favorite list</Text>
+      <Text>Favorite list coming soon</Text>
     </LinearGradient>
   );
 }
